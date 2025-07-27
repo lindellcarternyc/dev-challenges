@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #404a64;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-family: "Kanit";
+  text-shadow: 2px 2px 0px #35383f;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: #35383f;
+  font-weight: 1000;
+  font-style: normal;
+  font-size: 56px;
+  /* margin-top: 2rem; */
+  letter-spacing: -2px;
+}
+
+.instructions {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.coin {
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
+  font-size: 1rem;
+}
+
+#random-btn {
+  background-color: #216fb0;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 35px;
+  box-shadow: 0px 4px 0px 0px #23649b;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.author-info {
+  font-size: 0.75rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.author-info a {
+  color: lightblue;
+}
+
+.flipping {
+  animation: flip 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  20% {
+    transform: rotateY(360deg); /* 1 flip, slow */
+  }
+  50% {
+    transform: rotateY(900deg); /* 2.5 flips, fast */
+  }
+  80% {
+    transform: rotateY(1260deg); /* 3.5 flips, slowing */
+  }
+  100% {
+    transform: rotateY(1440deg); /* 4 flips, slow finish */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .instructions,
+  #result {
+    font-size: 1.25rem;
+  }
+}
