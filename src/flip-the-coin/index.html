@@ -33,8 +33,14 @@
       <h2 class="instructions">
         Press the coin or the button to flip the coin
       </h2>
-      <div class="coin" onclick="flipCoin()">
-        <img id="coin-img" src="./resources/heads.svg" alt="coin image" />
+      <div id="coin">
+        <img id="heads-img" src="./resources/heads.svg" alt="coin image" />
+        <img
+          id="tails-img"
+          src="./resources/tails.svg"
+          alt="coin image"
+          class="hidden"
+        />
       </div>
       <div>
         <img src="./resources/shadow.svg" alt="coin shadow" />
@@ -42,7 +48,7 @@
 
       <h2 id="result">Heads</h2>
 
-      <button type="button" id="random-btn" onclick="flipCoin()">RANDOM</button>
+      <button type="button" id="random-btn">RANDOM</button>
     </div>
 
     <div class="author-info">
@@ -55,6 +61,34 @@
       >
     </div>
 
-    <script src="script.js"></script>
+    <script>
+      const $coin = document.getElementById("coin");
+      const $heads = document.getElementById("heads-img");
+      const $tails = document.getElementById("tails-img");
+      const $button = document.getElementById("random-btn");
+      const $result = document.getElementById("result");
+
+      const flipCoin = () => {
+        $coin.classList.add("flipping");
+
+        setTimeout(() => {
+          const isHeads = Math.random() < 0.5;
+
+          if (isHeads) {
+            $heads.classList.remove("hidden");
+            $tails.classList.add("hidden");
+            $result.innerText = "Heads";
+          } else {
+            $tails.classList.remove("hidden");
+            $heads.classList.add("hidden");
+            $result.innerText = "Tails";
+          }
+          $coin.classList.remove("flipping");
+        }, 600);
+      };
+
+      $coin.onclick = flipCoin;
+      $button.onclick = flipCoin;
+    </script>
   </body>
 </html>

@@ -1,0 +1,25 @@
+{
+  "name": "dev-challenges",
+  "version": "1.0.0",
+  "source": "{src/index.html,src/flip-the-coin/index.html,src/flip-the-coin/resources}",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindellcarternyc/dev-challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lindellcarternyc/dev-challenges/issues"
+  },
+  "homepage": "https://github.com/lindellcarternyc/dev-challenges#readme",
+  "description": "",
+  "devDependencies": {
+    "parcel": "latest"
+  }
+}
